@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Righteous", cursive;
+  cursor: default;
+}
+
+/* nav */
+.ChangeColorNav {
+  @apply bg-[#FFAC41] dark:bg-sky-400;
+}
+
+/* hamburger */
+.hamburger-line {
+  @apply my-2 block h-[2px] w-[30px] bg-[#FFAC41] dark:bg-sky-400;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.NavbarActive {
+  @apply right-0;
+}
+
+/* search */
+.active {
+  @apply w-full border-2 border-[#FFAC41] px-2 dark:border-sky-500;
+}
+
+.Sactive {
+  @apply bg-[#FFAC41] text-white dark:bg-sky-500;
+}
+
+.SearchShow {
+  @apply top-full;
+}
+
+.searchBar:focus,
+.MSearchBar input:focus {
+  outline: none !important;
+}
+
+/* dark mode */
+#DarkMode:checked ~ label div.ToogleDarkmode {
+  @apply translate-x-3 bg-[#064663] lg:translate-x-8;
+}
+
+#DarkMode:checked ~ label div {
+  @apply bg-white;
+}
+
+/* hero */
+.Timg1 {
+  background-image: url("../img/hero/title\ img1.png");
+}
+
+.Timg2 {
+  background-image: url("../img/hero/title\ im2.jpg");
+}
+
+.crypto {
+  background-image: url("../img/logo/crypto4.png");
+}
+
+/* parallax */
+.bgParallax {
+  transform-style: preserve-3d;
+}
+
+.title {
+  transform: translateZ(20px);
+}
+
+.decorations {
+  transform: translateZ(40px);
+}
+
+.nftCover {
+  transform: translateZ(70px);
+}
+
+/* brands important css*/
+/* .slider-track {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+} */
+
+/* .slide-cover1, .slide-cover2{
+  display: flex;
+  width: 200%;
+} */
+
+.slide-cover1 {
+  animation: SlideLeft 20s linear infinite;
+}
+
+.slide-cover2 {
+  animation: SlideRight 20s linear infinite;
+}
+
+.slide-cover1:hover,
+.slide-cover2:hover {
+  animation-play-state: paused;
+}
+
+/* .slide {
+  width: 100%;
+} */
+
+/* .slide ul {
+  display: flex;
+  background: red;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+} */
+
+/* li {
+  width: 100%;
+} */
+
+/* li img {
+  display: block;
+  width: 100%;
+} */
+
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes SlideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* stuff */
+.nft1 {
+  background-image: url("../img/nft/nft1.png");
+}
+
+.nft2 {
+  background-image: url("../img/nft/nft2.png");
+}
+
+.nft3 {
+  background-image: url("../img/nft/nft3.png");
+}
+
+.swiper-slide-active > .nft1,
+.swiper-slide-active > .nft2,
+.swiper-slide-active > .nft3 {
+  height: 100%;
+  width: 100%;
+}
+
+/* phone */
+@media all and (max-width: 670px) {
+  .swiper-slide-active > .nft1,
+  .swiper-slide-active > .nft2,
+  .swiper-slide-active > .nft3 {
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.swiper-slide-active > .nft .shadowdes,
+.swiper-slide-active > .nft1 .shadowdes,
+.swiper-slide-active > .nft2 .shadowdes,
+.swiper-slide-active > .nft3 .shadowdes {
+  bottom: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffac41 !important;
+}
+
+.paginationActive {
+  color: #0ea5e9 !important;
+}
+
+@media all and (max-width: 670px) {
+  .swiper-slide-active > .nft {
+    width: 50%;
+  }
+}
+
+/* discover */
+.ShowFC {
+  @apply left-0;
+}
+
+@media all and (max-width: 670px) {
+  .ShowFCmb {
+    @apply top-1/2 w-full bg-slate-400 dark:bg-slate-700;
+  }
+
+  .showExtands {
+    @apply h-[60px];
+  }
+}
+
+#select:focus {
+  outline: none;
+  border: none;
+}
+
+.product-field ul li {
+  @apply duration-300 ease-in-out;
+}
+
+/* change color discover */
+.ActiveFilter {
+  @apply bg-orange-500 text-white dark:bg-sky-500 dark:text-white;
+}
+
+/* created */
+.panel {
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/colorful-3d-shapes-vaporwave-style.jpg"); */
+
+  transition: flex 0.5s ease-in;
+  flex: 0.5;
+}
+
+.panel:hover {
+  flex: 4.5;
+}
+
+.panel:hover > .panel1 {
+  width: 20%;
+}
+
+.panel:hover > .panels1 {
+  width: 80%;
+}
+
+.CreateImg {
+  background-image: url("../img/introduced/create.jpg");
+}
+
+.MintingImg {
+  background-image: url("../img/introduced/minting.jpg");
+}
+
+.SellImg {
+  background-image: url("../img/introduced/sell.jpg");
+}
+
+.ProfitImg {
+  background-image: url("../img/introduced/profit.jpg");
+}

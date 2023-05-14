@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icon -->
+    <link rel="icon" href="img/logo.png" type="image/icon type" />
+    <title>The Monitor Mind NFTs</title>
+
+    <!-- font awosome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- tailwind css -->
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+
+    <!-- dark mode -->
+    <script>
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="bg-white duration-300 ease-in-out dark:bg-black">
+    <!-- navbar -->
+    <nav class="fixed left-0 top-0 z-50 mx-auto flex h-12 w-full justify-between bg-white px-2 duration-300 ease-in-out dark:bg-black lg:justify-around">
+      <!-- logo -->
+      <div class="my-auto py-2">
+        <h2 class="text-xl text-[#FFAC41] duration-300 ease-in-out dark:text-sky-400"><a href="#hero">NFTs Worlds</a></h2>
+      </div>
+
+      <!-- hamburger -->
+      <button id="hamburger" name="humberger" type="button" class="absolute right-4 block h-full lg:hidden">
+        <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+        <span class="hamburger-line transition duration-300 ease-in-out"></span>
+        <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+      </button>
+
+      <!-- navbar -->
+      <div id="nav-menu" class="absolute -right-full top-full w-full max-w-[250px] duration-300 ease-in-out lg:relative lg:right-0 lg:top-0 lg:my-auto lg:flex lg:max-w-[77%] lg:justify-between">
+        <!-- search -->
+        <div class="hidden w-[350px] justify-end lg:me-4 lg:flex">
+          <input type="search" class="searchBar 1 my-2.5 me-4 w-0 rounded-md bg-white duration-300 ease-in-out" />
+          <i class="search fa-solid fa-magnifying-glass my-auto cursor-pointer rounded-full px-2.5 py-1 text-lg duration-300 ease-in-out dark:text-white"></i>
+        </div>
+
+        <!-- navbar -->
+        <ul class="z-20 block cursor-pointer bg-slate-600 duration-300 ease-in-out dark:bg-slate-400 lg:flex lg:bg-white lg:dark:bg-black">
+          <li class="group">
+            <a
+              href="#Collections"
+              class="flex px-8 py-3 text-base text-white duration-300 ease-in-out group-hover:bg-[#FFAC41] group-hover:text-white dark:text-white dark:group-hover:bg-sky-400 lg:text-black lg:group-hover:bg-white lg:group-hover:text-[#FFAC41] dark:lg:group-hover:bg-black dark:lg:group-hover:text-sky-400"
+              id="col"
+              >Collections</a
+            >
+          </li>
+          <li class="group">
+            <a
+              href="#discover"
+              class="flex px-8 py-3 text-base text-white duration-300 ease-in-out group-hover:bg-[#FFAC41] group-hover:text-white dark:text-white dark:group-hover:bg-sky-400 lg:text-black lg:group-hover:bg-white lg:group-hover:text-[#FFAC41] dark:lg:group-hover:bg-black dark:lg:group-hover:text-sky-400"
+              id="disc"
+              >Discover</a
+            >
+          </li>
+          <li class="group">
+            <a
+              href="#creates"
+              class="flex px-8 py-3 text-base text-white duration-300 ease-in-out group-hover:bg-[#FFAC41] group-hover:text-white dark:text-white dark:group-hover:bg-sky-400 lg:text-black lg:group-hover:bg-white lg:group-hover:text-[#FFAC41] dark:lg:group-hover:bg-black dark:lg:group-hover:text-sky-400"
+              id="crt"
+              >Creators</a
+            >
+          </li>
+          <li class="group">
+            <a
+              href="#introduced"
+              class="flex px-8 py-3 text-base text-white duration-300 ease-in-out group-hover:bg-[#FFAC41] group-hover:text-white dark:text-white dark:group-hover:bg-sky-400 lg:text-black lg:group-hover:bg-white lg:group-hover:text-[#FFAC41] dark:lg:group-hover:bg-black dark:lg:group-hover:text-sky-400"
+              id="int"
+              >introduced</a
+            >
+          </li>
+
+          <li class="flex justify-between px-8 py-3 lg:my-auto lg:py-0 lg:pl-8 lg:pr-0">
+            <!-- search icon -->
+            <i class="MdSearch fa-solid fa-magnifying-glass me-3 rounded-full p-2 text-white duration-300 ease-in-out lg:hidden"></i>
+
+            <!-- opensea -->
+            <div class="relative my-auto me-3 rounded-full lg:me-5 lg:h-6 lg:w-6">
+              <!-- light mode -->
+              <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" class="LOpensea absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2">
+                <path d="M90 45C90 69.8514 69.8514 90 45 90C20.1486 90 0 69.8514 0 45C0 20.1486 20.1486 0 45 0C69.8566 0 90 20.1486 90 45Z" fill="#2081E2" />
+                <path
+                  d="M22.2011 46.512L22.3953 46.2069L34.1016 27.8939C34.2726 27.6257 34.6749 27.6535 34.8043 27.9447C36.76 32.3277 38.4475 37.7786 37.6569 41.1721C37.3194 42.5683 36.3948 44.4593 35.3545 46.2069C35.2204 46.4612 35.0725 46.7109 34.9153 46.9513C34.8413 47.0622 34.7165 47.127 34.5824 47.127H22.5432C22.2196 47.127 22.0301 46.7756 22.2011 46.512Z"
+                  fill="white"
+                />
+                <path
+                  d="M74.38 49.9149V52.8137C74.38 52.9801 74.2783 53.1281 74.1304 53.1928C73.2242 53.5812 70.1219 55.0052 68.832 56.799C65.5402 61.3807 63.0251 67.932 57.4031 67.932H33.949C25.6362 67.932 18.9 61.1727 18.9 52.8322V52.564C18.9 52.3421 19.0803 52.1618 19.3023 52.1618H32.377C32.6359 52.1618 32.8255 52.4022 32.8024 52.6565C32.7099 53.5072 32.8671 54.3764 33.2693 55.167C34.0461 56.7435 35.655 57.7283 37.3934 57.7283H43.866V52.675H37.4673C37.1391 52.675 36.9449 52.2959 37.1345 52.0277C37.2038 51.9214 37.2824 51.8104 37.3656 51.6856C37.9713 50.8257 38.8358 49.4895 39.6958 47.9684C40.2829 46.9421 40.8516 45.8463 41.3093 44.746C41.4018 44.5472 41.4758 44.3438 41.5497 44.1449C41.6746 43.7936 41.804 43.4653 41.8965 43.1371C41.9889 42.8597 42.0629 42.5684 42.1369 42.2956C42.3542 41.3617 42.4467 40.3723 42.4467 39.3459C42.4467 38.9437 42.4282 38.523 42.3912 38.1207C42.3727 37.6815 42.3172 37.2423 42.2617 36.8031C42.2247 36.4147 42.1554 36.031 42.0814 35.6288C41.9889 35.0416 41.8595 34.4591 41.7115 33.8719L41.6607 33.65C41.5497 33.2478 41.4573 32.864 41.3278 32.4618C40.9626 31.1996 40.5418 29.9698 40.098 28.8186C39.9362 28.3609 39.7512 27.9217 39.5663 27.4825C39.2935 26.8213 39.0161 26.2203 38.7619 25.6516C38.6324 25.3927 38.5214 25.1569 38.4105 24.9165C38.2857 24.6437 38.1562 24.371 38.0268 24.112C37.9343 23.9132 37.8279 23.7283 37.754 23.5434L36.9634 22.0824C36.8524 21.8836 37.0374 21.6478 37.2546 21.7079L42.2016 23.0487H42.2155C42.2247 23.0487 42.2294 23.0533 42.234 23.0533L42.8859 23.2336L43.6025 23.437L43.866 23.511V20.5706C43.866 19.1512 45.0034 18 46.4089 18C47.1116 18 47.7496 18.2866 48.2073 18.7536C48.665 19.2206 48.9517 19.8586 48.9517 20.5706V24.935L49.4787 25.0829C49.5204 25.0968 49.562 25.1153 49.599 25.143C49.7284 25.2401 49.9133 25.3835 50.1491 25.5591C50.3341 25.7071 50.5329 25.8874 50.7733 26.0723C51.2495 26.4561 51.8181 26.9508 52.4423 27.5194C52.6087 27.6628 52.7706 27.8107 52.9185 27.9587C53.723 28.7076 54.6245 29.5861 55.4845 30.557C55.7249 30.8297 55.9607 31.1071 56.2011 31.3984C56.4415 31.6943 56.6958 31.9856 56.9177 32.2769C57.209 32.6652 57.5233 33.0674 57.7961 33.4882C57.9256 33.687 58.0735 33.8904 58.1984 34.0892C58.5497 34.6209 58.8595 35.1711 59.1554 35.7212C59.2802 35.9755 59.4097 36.2529 59.5206 36.5257C59.8489 37.2608 60.1078 38.0098 60.2742 38.7588C60.3251 38.9206 60.3621 39.0963 60.3806 39.2535V39.2904C60.436 39.5124 60.4545 39.7482 60.473 39.9886C60.547 40.756 60.51 41.5235 60.3436 42.2956C60.2742 42.6239 60.1818 42.9336 60.0708 43.2619C59.9598 43.5763 59.8489 43.9045 59.7056 44.2143C59.4282 44.8569 59.0999 45.4996 58.7115 46.1006C58.5867 46.3225 58.4388 46.5583 58.2908 46.7802C58.129 47.016 57.9626 47.238 57.8146 47.4553C57.6112 47.7327 57.3939 48.0239 57.172 48.2828C56.9732 48.5556 56.7697 48.8284 56.5478 49.0688C56.2381 49.434 55.9422 49.7808 55.6324 50.1137C55.4475 50.331 55.2487 50.5529 55.0452 50.7517C54.8464 50.9736 54.643 51.1724 54.4581 51.3573C54.1483 51.6671 53.8894 51.9075 53.6721 52.1063L53.1635 52.5733C53.0896 52.638 52.9925 52.675 52.8908 52.675H48.9517V57.7283H53.9079C55.0175 57.7283 56.0716 57.3353 56.9223 56.6141C57.2136 56.3598 58.485 55.2594 59.9876 53.5997C60.0384 53.5442 60.1032 53.5026 60.1771 53.4841L73.8668 49.5265C74.1211 49.4525 74.38 49.6467 74.38 49.9149Z"
+                  fill="white"
+                />
+              </svg>
+
+              <!-- dark mode -->
+              <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" class="DOpensea absolute left-1/2 top-1/2 hidden h-6 w-6 -translate-x-1/2 -translate-y-1/2">
+                <path d="M90 45C90 69.8514 69.8514 90 45 90C20.1486 90 0 69.8514 0 45C0 20.1486 20.1486 0 45 0C69.8566 0 90 20.1486 90 45Z" fill="white" />
+                <path
+                  d="M22.2011 46.512L22.3952 46.2069L34.1015 27.8939C34.2726 27.6257 34.6748 27.6535 34.8043 27.9447C36.7599 32.3277 38.4475 37.7786 37.6569 41.1721C37.3194 42.5683 36.3947 44.4593 35.3544 46.2069C35.2204 46.4612 35.0724 46.7109 34.9152 46.9513C34.8413 47.0622 34.7164 47.127 34.5823 47.127H22.5432C22.2195 47.127 22.03 46.7756 22.2011 46.512Z"
+                  fill="#2081E2"
+                />
+                <path
+                  d="M74.38 49.9149V52.8137C74.38 52.9801 74.2783 53.1281 74.1303 53.1928C73.2242 53.5812 70.1219 55.0052 68.832 56.799C65.5402 61.3807 63.0251 67.932 57.4031 67.932H33.9489C25.6362 67.932 18.9 61.1727 18.9 52.8322V52.564C18.9 52.3421 19.0803 52.1618 19.3022 52.1618H32.377C32.6359 52.1618 32.8255 52.4022 32.8024 52.6565C32.7099 53.5072 32.8671 54.3764 33.2693 55.167C34.046 56.7435 35.655 57.7283 37.3933 57.7283H43.866V52.675H37.4673C37.139 52.675 36.9449 52.2959 37.1344 52.0277C37.2038 51.9214 37.2824 51.8104 37.3656 51.6856C37.9712 50.8257 38.8358 49.4895 39.6957 47.9684C40.2829 46.9421 40.8516 45.8463 41.3093 44.746C41.4018 44.5472 41.4757 44.3438 41.5497 44.1449C41.6745 43.7936 41.804 43.4653 41.8964 43.1371C41.9889 42.8597 42.0629 42.5684 42.1369 42.2956C42.3542 41.3617 42.4466 40.3723 42.4466 39.3459C42.4466 38.9437 42.4281 38.523 42.3911 38.1207C42.3727 37.6815 42.3172 37.2423 42.2617 36.8031C42.2247 36.4147 42.1554 36.031 42.0814 35.6288C41.9889 35.0416 41.8595 34.4591 41.7115 33.8719L41.6607 33.65C41.5497 33.2478 41.4572 32.864 41.3278 32.4618C40.9625 31.1996 40.5418 29.9698 40.098 28.8186C39.9362 28.3609 39.7512 27.9217 39.5663 27.4825C39.2935 26.8213 39.0161 26.2203 38.7618 25.6516C38.6324 25.3927 38.5214 25.1569 38.4105 24.9165C38.2856 24.6437 38.1562 24.371 38.0267 24.112C37.9343 23.9132 37.8279 23.7283 37.7539 23.5434L36.9634 22.0824C36.8524 21.8836 37.0373 21.6478 37.2546 21.7079L42.2016 23.0487H42.2155C42.2247 23.0487 42.2293 23.0533 42.234 23.0533L42.8858 23.2336L43.6025 23.437L43.866 23.511V20.5706C43.866 19.1512 45.0033 18 46.4088 18C47.1116 18 47.7496 18.2866 48.2073 18.7536C48.665 19.2206 48.9517 19.8586 48.9517 20.5706V24.935L49.4787 25.0829C49.5203 25.0968 49.5619 25.1153 49.5989 25.143C49.7284 25.2401 49.9133 25.3835 50.1491 25.5591C50.334 25.7071 50.5328 25.8874 50.7733 26.0723C51.2495 26.4561 51.8181 26.9508 52.4423 27.5194C52.6087 27.6628 52.7705 27.8107 52.9185 27.9587C53.7229 28.7076 54.6245 29.5861 55.4844 30.557C55.7248 30.8297 55.9606 31.1071 56.201 31.3984C56.4415 31.6943 56.6957 31.9856 56.9177 32.2769C57.2089 32.6652 57.5233 33.0674 57.7961 33.4882C57.9255 33.687 58.0735 33.8904 58.1983 34.0892C58.5497 34.6209 58.8595 35.1711 59.1554 35.7212C59.2802 35.9755 59.4096 36.2529 59.5206 36.5257C59.8488 37.2608 60.1078 38.0098 60.2742 38.7588C60.3251 38.9206 60.362 39.0963 60.3805 39.2535V39.2904C60.436 39.5124 60.4545 39.7482 60.473 39.9886C60.547 40.756 60.51 41.5235 60.3435 42.2956C60.2742 42.6239 60.1817 42.9336 60.0708 43.2619C59.9598 43.5763 59.8488 43.9045 59.7055 44.2143C59.4281 44.8569 59.0999 45.4996 58.7115 46.1006C58.5867 46.3225 58.4387 46.5583 58.2908 46.7802C58.129 47.016 57.9625 47.238 57.8146 47.4553C57.6112 47.7327 57.3939 48.0239 57.1719 48.2828C56.9731 48.5556 56.7697 48.8284 56.5478 49.0688C56.238 49.434 55.9421 49.7808 55.6324 50.1137C55.4474 50.331 55.2486 50.5529 55.0452 50.7517C54.8464 50.9736 54.643 51.1724 54.458 51.3573C54.1483 51.6671 53.8894 51.9075 53.6721 52.1063L53.1635 52.5733C53.0895 52.638 52.9924 52.675 52.8907 52.675H48.9517V57.7283H53.9079C55.0175 57.7283 56.0716 57.3353 56.9223 56.6141C57.2135 56.3598 58.485 55.2594 59.9876 53.5997C60.0384 53.5442 60.1031 53.5026 60.1771 53.4841L73.8668 49.5265C74.1211 49.4525 74.38 49.6467 74.38 49.9149Z"
+                  fill="#2081E2"
+                />
+              </svg>
+            </div>
+
+            <!-- dark mode -->
+            <div class="my-auto">
+              <span class="mr-2 hidden text-sm text-slate-500">Light</span>
+              <input type="checkbox" class="hidden" id="DarkMode" />
+              <label for="DarkMode">
+                <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-200 p-1 duration-300 ease-in-out lg:h-7 lg:w-16">
+                  <div class="ToogleDarkmode h-4 w-4 rounded-full bg-[#FFAC41] transition duration-300 ease-in-out lg:h-6 lg:w-6"></div>
+                </div>
+              </label>
+              <span class="ml-2 hidden text-sm text-slate-500">Dark</span>
+            </div>
+          </li>
+        </ul>
+        <!-- searchbar -->
+        <div class="MSearchBar absolute top-40 -z-10 w-full bg-slate-700 px-2 py-2 duration-300 ease-in-out dark:bg-white lg:hidden">
+          <input type="text" class="w-full rounded-sm px-2 dark:border-2 dark:border-sky-500" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <section class="w-full bg-white duration-300 ease-in-out dark:bg-black" id="hero">
+      <div class="mx-auto h-[350px] pt-12 md:h-[500px] md:w-[80%] lg:h-screen lg:w-[80%] lg:pb-6 lg:pt-12">
+        <div class="bgParallax relative mx-auto h-full w-[80%]">
+          <!-- title -->
+          <div class="title w-full">
+            <p class="pt-3 text-center text-[9px] duration-300 ease-in-out dark:text-white md:pt-5 md:text-[10px] lg:text-low">Start your journey in the world of NfTs</p>
+
+            <h2 class="flex justify-center text-[20px] duration-300 ease-in-out dark:text-white md:text-[27px] lg:text-title">
+              Discover
+              <span
+                class="Timg1 mx-1 my-auto block h-4 w-14 rounded-full bg-orange-200 bg-[length:100px] bg-center bg-no-repeat duration-300 ease-in-out dark:bg-white md:mx-2 md:h-5 md:w-16 lg:mx-4 lg:h-10 lg:w-40 lg:bg-[length:300px]"
+              ></span>
+              Collect
+            </h2>
+
+            <h2 class="flex justify-center text-[20px] duration-300 ease-in-out dark:text-white md:text-[27px] lg:text-title">
+              And Sell
+              <span class="Timg2 my-auto ms-1 block h-4 w-20 rounded-full bg-black bg-cover bg-center bg-no-repeat md:ms-2 md:h-5 md:w-24 lg:ms-4 lg:h-10 lg:w-64"></span>
+            </h2>
+
+            <h2 class="mx-auto text-center text-[20px] duration-300 ease-in-out dark:text-white md:text-[27px] lg:text-title">Remarkable NFTs.</h2>
+          </div>
+          <!-- nft hero -->
+          <div class="nftCover relative mt-3 h-[170px] w-full py-3 md:h-[260px] lg:mt-0 lg:h-[65%]">
+            <div
+              class="relative left-1/2 top-1/2 z-[2] h-full w-[30%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-b-full rounded-t-full bg-gradient-to-t from-white to-[#CCCCCC] bg-cover bg-center bg-no-repeat md:w-[23%] lg:h-full lg:w-[25%]"
+            >
+              <img src="img/nft/sad box tV - 1.png" alt="" class="absolute bottom-0 left-1/2 -translate-x-1/2 lg:h-[250px] lg:w-[200px]" />
+            </div>
+
+            <div class="absolute left-[60%] top-1/2 z-[1] h-[75%] w-[20%] -translate-x-1/2 -translate-y-1/2 rounded-b-full rounded-t-full bg-[#FFAC41] duration-300 ease-in-out dark:bg-sky-500 md:left-[55%] lg:left-[60%]"></div>
+          </div>
+
+          <!-- decorations -->
+          <div class="decorations absolute left-[3%] top-[3%] h-full w-[90%] -translate-x-1/2 lg:left-[5%] lg:top-0">
+            <!-- left -->
+            <div class="absolute h-6 w-5 md:left-[5%] md:h-14 md:w-14 lg:left-[10%] lg:top-5 lg:h-16 lg:w-16">
+              <i class="fa-regular fa-star absolute right-0 text-[8px] text-orange-300 duration-300 ease-in-out dark:text-sky-300 md:text-[20px] lg:text-xl"></i>
+              <span class="absolute bottom-0 h-2 w-2 rounded-full border-2 border-orange-400 duration-300 ease-in-out dark:border-sky-400 md:h-4 md:w-4 lg:h-5 lg:w-5"></span>
+            </div>
+
+            <div class="decorations absolute left-[5%] top-[40%] flex h-8 w-16 md:left-[3%] md:h-16 md:w-32 lg:left-[3%] lg:top-[37%] lg:h-24 lg:w-56">
+              <div class="squer absolute top-0 my-auto h-6 w-12 md:h-12 md:w-24 lg:h-20 lg:w-40">
+                <p class="py-1.5 pe-1 text-right text-[3px] duration-300 ease-in-out dark:text-white md:py-2.5 md:text-[5px] lg:py-5 lg:text-[10px]">Hidden within letters, a code to unravel, the secret word reveals the path to travel.</p>
+              </div>
+
+              <div class="crypto absolute bottom-0 right-0 h-3 w-3 rounded-full bg-yellow-300 bg-cover bg-center bg-no-repeat md:h-6 md:w-6 lg:h-12 lg:w-12"></div>
+            </div>
+
+            <div class="absolute bottom-[7%] left-0 flex h-20 w-14 md:h-36 md:w-24 lg:bottom-[5%] lg:left-[0%] lg:h-56 lg:w-44">
+              <div class="absolute top-0 my-auto h-20 w-6 rounded-full border-2 border-orange-500 duration-300 ease-in-out dark:border-sky-400 md:h-36 md:w-9 lg:h-56 lg:w-20"></div>
+
+              <div class="absolute bottom-[0%] right-0 h-2 w-6 rounded-full border-2 border-orange-400 duration-300 ease-in-out dark:border-sky-300 md:bottom-[10%] md:h-2 md:w-10 lg:h-3 lg:w-16"></div>
+            </div>
+
+            <i class="fa-regular fa-star absolute bottom-[10%] left-[30%] text-[10px] text-orange-400 duration-300 ease-in-out dark:text-sky-500 md:bottom-[15%] md:left-[28%] md:text-[20px] lg:bottom-[10%] lg:left-[28%] lg:text-[45px]"></i>
+
+            <!-- right -->
+            <div class="absolute right-0 top-[25%] h-6 w-6 md:right-[10%] md:top-[20%] md:h-10 md:w-10 lg:right-[15%] lg:top-[25%] lg:h-16 lg:w-16">
+              <i class="fa-regular fa-star absolute left-0 text-[8px] text-orange-500 duration-300 ease-in-out dark:text-sky-500 md:text-[15px] lg:text-xl"></i>
+              <span class="absolute bottom-0 right-0 h-2 w-2 rounded-full border-2 border-orange-300 duration-300 ease-in-out dark:border-sky-300 md:h-3 md:w-3 lg:h-5 lg:w-5"></span>
+            </div>
+
+            <div class="absolute bottom-[20%] right-[0%] flex h-7 w-12 md:h-14 md:w-28 lg:bottom-[10%] lg:h-20 lg:w-44">
+              <p class="py-1.5 pe-1 text-right text-[3px] duration-300 ease-in-out dark:text-white md:py-2.5 md:text-[7px] lg:py-4 lg:text-[11px]">Why don't scientists trust atoms? Because they make up everything!</p>
+            </div>
+
+            <div class="absolute right-0 top-[40%] flex h-16 w-10 md:top-[35%] md:h-28 md:w-20 lg:right-[0%] lg:top-[38%] lg:h-52 lg:w-40">
+              <div class="absolute bottom-[0%] right-[0%] flex h-16 w-4 rounded-full border-2 border-orange-500 duration-300 ease-in-out dark:border-sky-500 md:h-28 md:w-7 lg:h-44 lg:w-14"></div>
+
+              <div class="absolute bottom-0 h-3 w-3 rounded-full border-2 border-orange-500 duration-300 ease-in-out dark:border-sky-400 md:h-7 md:w-7 lg:h-12 lg:w-12"></div>
+            </div>
+
+            <div class="absolute bottom-[10%] right-[10%] flex h-3 w-3 rounded-full border-2 border-orange-400 duration-300 ease-in-out dark:border-sky-300 md:right-[15%] md:h-4 md:w-4 lg:bottom-[2%] lg:h-8 lg:w-8"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- brand -->
+    <section class="h-[36px] w-full py-2 duration-300 ease-in-out dark:bg-black md:h-[80px] lg:h-[140px] lg:py-5">
+      <!-- slide left -->
+      <div class="slider-track h-[20px] w-full overflow-hidden md:h-[40px] lg:h-[50px]">
+        <div class="slide-cover1 flex w-[200%]">
+          <!-- slide 1 -->
+          <div class="slide w-full">
+            <ul class="flex h-[20px] list-none bg-slate-300 pl-0 duration-300 ease-in-out dark:bg-slate-400 md:h-[40px] lg:h-[50px]">
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo1.png" class="h-full w-full p-1 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:p-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo2.png" class="h-full w-full px-1 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo3.png" class="h-full w-full px-0.5 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo4.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo5.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo6.png" class="h-full w-full p-0.5 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo7.png" class="h-full w-full px-0.5 py-2 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2 md:py-4 lg:py-5" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo8.png" class="h-full w-full px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2 md:py-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo9.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo10.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+            </ul>
+          </div>
+
+          <!-- slide 1 - important -->
+          <div class="slide w-full">
+            <ul class="flex h-[20px] list-none bg-slate-300 pl-0 duration-300 ease-in-out dark:bg-slate-400 md:h-[40px] lg:h-[50px]">
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo1.png" class="h-full w-full p-1 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:p-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo2.png" class="h-full w-full px-1 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo3.png" class="h-full w-full px-0.5 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo4.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo5.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo6.png" class="h-full w-full p-0.5 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo7.png" class="h-full w-full px-0.5 py-2 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2 md:py-4 lg:py-5" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo8.png" class="h-full w-full px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200 md:px-2 md:py-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo9.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/logo10.png" class="h-full w-full grayscale duration-300 ease-in-out hover:bg-slate-100 hover:grayscale-0 dark:hover:bg-slate-200" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- slide right -->
+      <div class="slider-track h-[20px] w-full overflow-hidden md:h-[40px] lg:h-[50px]">
+        <div class="slide-cover2 flex w-[200%]">
+          <!-- slide 2 -->
+          <div class="slide w-full">
+            <ul class="flex h-[20px] list-none bg-slate-400 pl-0 duration-300 ease-in-out dark:bg-slate-300 md:h-[40px] lg:h-[50px]">
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto1.png" class="mx-auto h-full w-[50%] py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:p-2 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto2.png" class="mx-auto h-full w-[50%] py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:p-2 lg:w-[50%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto3.png" class="mx-auto h-full w-[50%] py-0.5 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 lg:py-0" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto4.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto5.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto6.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto7.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto8.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto9.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto10.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+            </ul>
+          </div>
+
+          <!-- slide 2 - important -->
+          <div class="slide w-full">
+            <ul class="flex h-[20px] list-none bg-slate-400 pl-0 duration-300 ease-in-out dark:bg-slate-300 md:h-[40px] lg:h-[50px]">
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto1.png" class="mx-auto h-full w-[50%] py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:p-2 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto2.png" class="mx-auto h-full w-[50%] py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:p-2 lg:w-[50%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto3.png" class="mx-auto h-full w-[50%] py-0.5 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 lg:py-0" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto4.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto5.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto6.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto7.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto8.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto9.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+              <li class="mx-1 w-full">
+                <img src="img/logo/crypto10.png" class="mx-auto h-full w-[65%] px-0.5 py-1 grayscale duration-300 ease-in-out hover:bg-slate-200 hover:grayscale-0 dark:hover:bg-slate-100 md:w-[60%] md:px-2 md:py-1.5 lg:w-[45%] lg:px-2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="h-fit w-full bg-white pb-10 pt-12 duration-300 ease-in-out dark:bg-black lg:h-screen" id="Collections">
+      <div class="stuff mx-auto h-[300px] w-[80%] text-center md:h-[450px] lg:h-full">
+        <!-- stuff title -->
+        <div class="titleStuff h-[26%] w-full md:h-[22%] lg:h-[16%]">
+          <p class="text-[10px] duration-300 ease-in-out dark:text-white md:text-[15px] lg:text-[20px]">Hot Stuff</p>
+          <h2 class="mx-auto w-1/2 text-[15px] duration-300 ease-in-out dark:text-white md:w-[30%] md:text-xl lg:w-1/3 lg:text-mid">Best seasons NFTS Collections</h2>
+        </div>
+        <!-- stuff slider -->
+        <div class="stuff relative mx-auto h-[70%] w-[90%] py-3 md:mx-0 md:w-full md:py-2 lg:h-[84%]">
+          <!-- slider card -->
+          <div class="swiper mySwiper mx-auto h-full w-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide relative flex justify-center">
+                <div class="nft1 absolute bottom-0 left-1/2 h-full w-[50%] -translate-x-1/2 overflow-hidden rounded-[5%] bg-slate-300 bg-cover bg-bottom bg-no-repeat duration-300 ease-in-out dark:bg-white md:h-[70%] md:w-[70%]">
+                  <div class="shadowdes absolute -bottom-1/2 h-[20%] w-full bg-gradient-to-t from-slate-500 to-transparent duration-300 ease-in-out dark:from-slate-300">
+                    <h2 class="text-[5px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-[9px] lg:text-low lg:drop-shadow-light dark:lg:drop-shadow-dark">Hype</h2>
+                    <p class="text-[10px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-low lg:text-mid lg:drop-shadow-light dark:lg:drop-shadow-dark">Shark Boy</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide relative flex justify-center">
+                <div class="nft2 absolute bottom-0 left-1/2 h-full w-[50%] -translate-x-1/2 overflow-hidden rounded-[5%] bg-slate-300 bg-cover bg-bottom bg-no-repeat duration-300 ease-in-out dark:bg-white md:h-[70%] md:w-[70%]">
+                  <div class="shadowdes absolute -bottom-1/2 h-[20%] w-full bg-gradient-to-t from-slate-500 to-transparent duration-300 ease-in-out dark:from-slate-300">
+                    <h2 class="text-[5px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-[9px] lg:text-low lg:drop-shadow-light dark:lg:drop-shadow-dark">Unique</h2>
+                    <p class="text-[10px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-low lg:text-mid lg:drop-shadow-light dark:lg:drop-shadow-dark">Icy Dragon</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide relative flex justify-center">
+                <div class="nft3 absolute bottom-0 left-1/2 h-full w-[50%] -translate-x-1/2 overflow-hidden rounded-[5%] bg-slate-300 bg-cover bg-bottom bg-no-repeat duration-300 ease-in-out dark:bg-white md:h-[70%] md:w-[70%]">
+                  <div class="shadowdes absolute -bottom-1/2 h-[20%] w-full bg-gradient-to-t from-slate-500 to-transparent duration-300 ease-in-out dark:from-slate-300">
+                    <h2 class="text-[5px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-[9px] lg:text-low lg:drop-shadow-light dark:lg:drop-shadow-dark">Classic</h2>
+                    <p class="text-[10px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-low lg:text-mid lg:drop-shadow-light dark:lg:drop-shadow-dark">Brainy</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide relative flex justify-center">
+                <div class="nft1 absolute bottom-0 left-1/2 h-full w-[50%] -translate-x-1/2 overflow-hidden rounded-[5%] bg-slate-300 bg-cover bg-bottom bg-no-repeat duration-300 ease-in-out dark:bg-white md:h-[70%] md:w-[70%]">
+                  <div class="shadowdes absolute -bottom-1/2 h-[20%] w-full bg-gradient-to-t from-slate-500 to-transparent duration-300 ease-in-out dark:from-slate-300">
+                    <h2 class="text-[5px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-[9px] lg:text-low lg:drop-shadow-light dark:lg:drop-shadow-dark">Hype</h2>
+                    <p class="text-[10px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-low lg:text-mid lg:drop-shadow-light dark:lg:drop-shadow-dark">Shark Boy</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide relative flex justify-center">
+                <div class="nft2 absolute bottom-0 left-1/2 h-full w-[50%] -translate-x-1/2 overflow-hidden rounded-[5%] bg-slate-300 bg-cover bg-bottom bg-no-repeat duration-300 ease-in-out dark:bg-white md:h-[70%] md:w-[70%]">
+                  <div class="shadowdes absolute -bottom-1/2 h-[20%] w-full bg-gradient-to-t from-slate-500 to-transparent duration-300 ease-in-out dark:from-slate-300">
+                    <h2 class="text-[5px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-[9px] lg:text-low lg:drop-shadow-light dark:lg:drop-shadow-dark">Unique</h2>
+                    <p class="text-[10px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-low lg:text-mid lg:drop-shadow-light dark:lg:drop-shadow-dark">Icy Dragon</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide relative flex justify-center">
+                <div class="nft3 absolute bottom-0 left-1/2 h-full w-[50%] -translate-x-1/2 overflow-hidden rounded-[5%] bg-slate-300 bg-cover bg-bottom bg-no-repeat duration-300 ease-in-out dark:bg-white md:h-[70%] md:w-[70%]">
+                  <div class="shadowdes absolute -bottom-1/2 h-[20%] w-full bg-gradient-to-t from-slate-500 to-transparent duration-300 ease-in-out dark:from-slate-300">
+                    <h2 class="text-[5px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-[9px] lg:text-low lg:drop-shadow-light dark:lg:drop-shadow-dark">Classic</h2>
+                    <p class="text-[10px] text-white drop-shadow-lightSM duration-300 ease-in-out dark:drop-shadow-darkSm md:text-low lg:text-mid lg:drop-shadow-light dark:lg:drop-shadow-dark">Brainy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next duration-300 ease-in-out md:bg-white md:dark:bg-black"></div>
+            <div class="swiper-button-prev duration-300 ease-in-out md:bg-white md:dark:bg-black"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- discover -->
+    <section class="h-fit w-full bg-white duration-300 ease-in-out dark:bg-black lg:mb-20 lg:h-screen" id="discover">
+      <div class="explore mx-auto h-full w-full py-12 lg:w-[80%]">
+        <!-- title explore -->
+        <div class="titleExplore mx-auto w-fit text-center">
+          <p class="text-[10px] text-black duration-300 ease-in-out dark:text-white md:text-[15px] lg:text-[20px]">Explore</p>
+          <h2 class="mx-auto text-[15px] text-black duration-300 ease-in-out dark:text-white md:text-xl lg:text-mid">Discover items</h2>
+        </div>
+
+        <!-- filter options -->
+        <div class="filter-cover mx-auto mt-5 h-fit w-full md:w-[80%]">
+          <!-- head -->
+          <div class="filter-options relative flex h-[30px] w-full justify-between bg-slate-300 duration-300 ease-in-out dark:bg-slate-600 lg:h-[50px]">
+            <!-- dropdown -->
+            <div class="filter-condition relative z-[2] ms-0.5 h-[30px] w-[20%] md:ms-1 md:w-[15%] lg:relative lg:h-[50px]">
+              <select
+                name=""
+                id="select"
+                class="lg:textbas lg:py-0y absolute left-1/2 top-1/2 h-[25px] w-full -translate-x-1/2 -translate-y-1/2 py-1 text-[10px] text-orange-500 duration-300 ease-in-out dark:text-sky-500 md:text-[12px] lg:h-[40px] lg:text-base"
+              >
+                <option class="text-[5px] text-orange-500 duration-300 ease-in-out dark:text-sky-500 lg:text-base" value="Default">Default</option>
+                <option class="text-[5px] text-orange-500 duration-300 ease-in-out dark:text-sky-500 lg:text-base" value="LowToHigh">Low to high</option>
+                <option class="text-[5px] text-orange-500 duration-300 ease-in-out dark:text-sky-500 lg:text-base" value="HighToLow">High to low</option>
+              </select>
+            </div>
+
+            <!-- category -->
+            <div class="filter-category absolute left-1/2 top-0 h-[30px] w-[0px] -translate-x-1/2 overflow-hidden md:w-[60%] lg:top-1/2 lg:h-[50px] lg:-translate-y-1/2">
+              <ul class="indicator absolute left-full top-1/2 flex w-full -translate-y-1/2 justify-around duration-300 ease-in-out md:justify-between">
+                <li
+                  data-filter="all"
+                  class="ActiveFilter my-auto cursor-pointer rounded-full border-2 border-orange-500 bg-white px-5 py-1 text-[7px] duration-300 ease-in-out hover:border-slate-400 hover:bg-orange-500 hover:text-white dark:border-sky-500 dark:hover:border-slate-700 dark:hover:bg-sky-500 md:px-4 md:py-0.5 md:text-[10px] md:hover:border-slate-300 md:dark:hover:border-slate-600 lg:text-base"
+                >
+                  <a href="#discover">All Category</a>
+                </li>
+                <li
+                  data-filter="Classic"
+                  class="my-auto cursor-pointer rounded-full border-2 border-orange-500 bg-white px-5 py-1 text-[7px] duration-300 ease-in-out hover:border-slate-400 hover:bg-orange-500 hover:text-white dark:border-sky-500 dark:hover:border-slate-700 dark:hover:bg-sky-500 md:px-4 md:py-0.5 md:text-[10px] md:hover:border-slate-300 md:dark:hover:border-slate-600 lg:text-base"
+                >
+                  <a href="#discover">Classic</a>
+                </li>
+                <li
+                  data-filter="Hype"
+                  class="my-auto cursor-pointer rounded-full border-2 border-orange-500 bg-white px-5 py-1 text-[7px] duration-300 ease-in-out hover:border-slate-400 hover:bg-orange-500 hover:text-white dark:border-sky-500 dark:hover:border-slate-700 dark:hover:bg-sky-500 md:px-4 md:py-0.5 md:text-[10px] md:hover:border-slate-300 md:dark:hover:border-slate-600 lg:text-base"
+                >
+                  <a href="#discover">Hype</a>
+                </li>
+                <li
+                  data-filter="Unique"
+                  class="my-auto cursor-pointer rounded-full border-2 border-orange-500 bg-white px-5 py-1 text-[7px] duration-300 ease-in-out hover:border-slate-400 hover:bg-orange-500 hover:text-white dark:border-sky-500 dark:hover:border-slate-700 dark:hover:bg-sky-500 md:px-4 md:py-0.5 md:text-[10px] md:hover:border-slate-300 md:dark:hover:border-slate-600 lg:text-base"
+                >
+                  <a href="#discover">Unique</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- filter button show -->
+            <div class="filter-show relative right-0 h-[30px] w-[27%] md:w-[15%] lg:h-[50px]">
+              <h2
+                class="absolute left-1/2 top-1/2 w-[95%] -translate-x-1/2 -translate-y-1/2 cursor-pointer border-2 border-slate-300 bg-orange-500 px-2 py-1 text-center text-[10px] text-white duration-300 ease-in-out hover:border-orange-500 hover:bg-white hover:text-black dark:border-slate-600 dark:bg-sky-500 dark:hover:border-sky-500 dark:hover:bg-white lg:text-lg"
+              >
+                <i class="fa-solid fa-filter me-2 text-[10px] lg:text-base"></i>Filter
+              </h2>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="product-field">
+            <ul class="items flex h-[220px] w-full flex-wrap justify-center overflow-y-auto bg-slate-100 py-3 duration-300 ease-in-out dark:bg-white md:h-[350px] lg:h-[470px]" id="cardCover">
+              <!-- Watch -->
+              <li data-category="" data-price="" class="m-0.5 h-[110px] w-[23%] rounded-sm bg-orange-500 dark:bg-sky-500 md:m-1 md:h-[180px] md:rounded-md lg:h-[260px] lg:w-[24%]">
+                <div class="picture mx-auto my-1 h-[65%] w-[95%] rounded-sm md:rounded-md lg:h-[70%]">
+                  <img src="img/nft/Classic - black-diamond.png" alt="${nft[i].nama}" class="h-full w-full rounded-sm md:rounded-md" />
+                </div>
+                <div class="detail mx-auto h-[25%] w-[95%] md:h-[29%] lg:h-[25%]">
+                  <div class="relative mx-auto h-[28px] w-full md:h-full">
+                    <!-- name -->
+                    <div class="absolute left-0">
+                      <strong class="block text-[5px] font-normal text-black duration-300 ease-in-out dark:text-white md:text-[8px] lg:text-[10px]">Classic</strong>
+                      <h2 class="text-[6px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-sm">Black Diamond</h2>
+                    </div>
+
+                    <!-- price -->
+                    <div class="absolute right-0">
+                      <p class="text-right text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[8px] lg:text-[10px]">Price</p>
+                      <h4 class="priceses flex text-[6px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-sm">
+                        <span class="hidden">$</span> 0.005 <img src="img/logo/crypto2.png" alt="" class="my-auto ms-0.5 h-1.5 w-1.5 md:ms-1 md:h-2 md:w-2 lg:h-3 lg:w-3" />
+                      </h4>
+                    </div>
+
+                    <!-- like -->
+                    <div class="like absolute bottom-0 flex w-full justify-between border-t-[1px] border-orange-400 duration-300 ease-in-out dark:border-sky-400 md:border-t-2">
+                      <h2 class="text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-[15px]">20</h2>
+                      <i class="fa-solid fa-heart my-auto text-[5px] text-red-600 duration-300 ease-in-out dark:text-red-400 md:text-[10px] lg:text-sm"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- creator -->
+    <section class="h-fit w-full bg-slate-300 px-3 pb-14 pt-12 duration-300 ease-in-out dark:bg-slate-600 lg:h-screen lg:px-0" id="creates">
+      <div class="mx-auto h-[200px] w-full md:h-[400px] md:w-[80%] lg:h-full">
+        <p class="text-center text-[10px] text-white duration-300 ease-in-out dark:text-black md:text-[15px] lg:text-[20px]">Creators</p>
+        <h2 class="mx-auto w-1/2 text-center text-[15px] text-white duration-300 ease-in-out dark:text-black md:w-[30%] md:text-xl lg:w-1/3 lg:text-mid">
+          Creates and sell <br />
+          your NFTs
+        </h2>
+
+        <div class="mt-1 flex h-[80%] w-full duration-300 ease-in-out dark:bg-slate-600 md:mt-4">
+          <!-- panel -->
+          <div class="panel group relative mx-0.5 flex h-full">
+            <div class="relative h-full w-[20%]">
+              <div class="h-[20%] w-full overflow-hidden border-b-4 border-orange-400 duration-300 ease-in-out dark:border-sky-500">
+                <h2 class="bg-[#FFAC41] py-2 text-center text-[10px] duration-300 ease-in-out dark:bg-sky-400 dark:text-white md:py-4 md:text-[25px] lg:py-5 lg:text-mid">1</h2>
+              </div>
+              <div class="relative h-[80%] w-full overflow-hidden bg-white">
+                <h3 class="absolute top-[30%] w-full -translate-y-1/2 rotate-90 text-center text-mid text-orange-500 duration-300 ease-in-out dark:text-sky-400 md:top-[30%] md:text-[50px] lg:text-[80px]">Creates</h3>
+              </div>
+            </div>
+            <div class="in-panel relative h-full w-[80%] bg-slate-200 duration-300 ease-in-out dark:bg-slate-700">
+              <div class="CreateImg h-1/2 w-full bg-cover bg-center bg-no-repeat"></div>
+              <div class="absolute bottom-0 h-1/2 w-full overflow-hidden py-1.5 ps-1 md:py-2 md:ps-2 lg:py-3 lg:ps-5">
+                <i
+                  class="fa-brands fa-creative-commons-share text-[25px] text-orange-500 duration-300 ease-in-out group-hover:text-[30px] dark:text-sky-500 md:text-[50px] md:group-hover:text-[60px] lg:text-[80px] lg:group-hover:text-[100px]"
+                ></i>
+                <h2 class="px-1 text-[10px] text-black duration-300 ease-in-out dark:text-white md:text-[22px] lg:text-mid">Create a unique digital asset</h2>
+                <p class="px-1 text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[12px] lg:text-low">The first step to creating an NFT is to come up with an original digital asset that people will find valuable.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel group relative mx-0.5 flex h-full">
+            <div class="relative h-full w-[20%]">
+              <div class="h-[20%] w-full overflow-hidden border-b-4 border-orange-400 duration-300 ease-in-out dark:border-sky-500">
+                <h2 class="bg-[#FFAC41] py-2 text-center text-[10px] duration-300 ease-in-out dark:bg-sky-400 dark:text-white md:py-4 md:text-[25px] lg:py-5 lg:text-mid">2</h2>
+              </div>
+              <div class="relative h-[80%] w-full overflow-hidden bg-white">
+                <h3 class="absolute top-[30%] w-full -translate-y-1/2 rotate-90 text-center text-mid text-orange-500 duration-300 ease-in-out dark:text-sky-400 md:top-[35%] md:text-[50px] lg:top-[30%] lg:text-[80px]">Minting</h3>
+              </div>
+            </div>
+            <div class="in-panel relative h-full w-[80%] bg-slate-200 duration-300 ease-in-out dark:bg-slate-700">
+              <div class="MintingImg h-1/2 w-full bg-cover bg-center bg-no-repeat"></div>
+              <div class="absolute bottom-0 h-1/2 w-full overflow-hidden py-1.5 ps-1 md:py-2 md:ps-2 lg:py-3 lg:ps-5">
+                <i class="fa-solid fa-fingerprint text-[25px] text-orange-500 duration-300 ease-in-out group-hover:text-[30px] dark:text-sky-500 md:text-[50px] md:group-hover:text-[60px] lg:text-[80px] lg:group-hover:text-[100px]"></i>
+                <h2 class="px-1 text-[10px] text-black duration-300 ease-in-out dark:text-white md:text-[22px] lg:text-mid">Minting your art become NFT</h2>
+                <p class="px-1 text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[12px] lg:text-low">Once you have created your digital asset, you will need to mint it as an NFT.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel group relative mx-0.5 flex h-full">
+            <div class="relative h-full w-[20%]">
+              <div class="h-[20%] w-full overflow-hidden border-b-4 border-orange-400 duration-300 ease-in-out dark:border-sky-500">
+                <h2 class="bg-[#FFAC41] py-2 text-center text-[10px] duration-300 ease-in-out dark:bg-sky-400 dark:text-white md:py-4 md:text-[25px] lg:py-5 lg:text-mid">3</h2>
+              </div>
+              <div class="relative h-[80%] w-full overflow-hidden bg-white">
+                <h3 class="absolute top-[45%] w-full -translate-y-1/2 rotate-90 text-center text-mid text-orange-500 duration-300 ease-in-out dark:text-sky-400 md:text-[50px] lg:top-[45%] lg:text-[80px]">Sales</h3>
+              </div>
+            </div>
+            <div class="in-panel relative h-full w-[80%] bg-slate-200 duration-300 ease-in-out dark:bg-slate-700">
+              <div class="SellImg h-1/2 w-full bg-cover bg-center bg-no-repeat"></div>
+              <div class="absolute bottom-0 h-1/2 w-full overflow-hidden py-1.5 ps-1 md:py-2 md:ps-2 lg:py-3 lg:ps-5">
+                <i class="fa-solid fa-tags text-[25px] text-orange-500 duration-300 ease-in-out group-hover:text-[30px] dark:text-sky-500 md:text-[50px] md:group-hover:text-[60px] lg:text-[80px] lg:group-hover:text-[100px]"></i>
+                <h2 class="px-1 text-[10px] text-black duration-300 ease-in-out dark:text-white md:text-[22px] lg:text-mid">post your NFT on marketplace</h2>
+                <p class="px-1 text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[12px] lg:text-low">After minting your NFT, you can list it for sale on the platform where you created it.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel group relative mx-0.5 flex h-full">
+            <div class="relative h-full w-[20%]">
+              <div class="h-[20%] w-full overflow-hidden border-b-4 border-orange-400 duration-300 ease-in-out dark:border-sky-500">
+                <h2 class="bg-[#FFAC41] py-2 text-center text-[10px] duration-300 ease-in-out dark:bg-sky-400 dark:text-white md:py-4 md:text-[25px] lg:py-5 lg:text-mid">4</h2>
+              </div>
+              <div class="relative h-[80%] w-full overflow-hidden bg-white">
+                <h3 class="absolute top-[35%] w-full -translate-y-1/2 rotate-90 text-center text-mid text-orange-500 duration-300 ease-in-out dark:text-sky-400 md:text-[50px] lg:top-[35%] lg:text-[80px]">Profits</h3>
+              </div>
+            </div>
+            <div class="in-panel relative h-full w-[80%] bg-slate-200 duration-300 ease-in-out dark:bg-slate-700">
+              <div class="ProfitImg h-1/2 w-full bg-cover bg-center bg-no-repeat"></div>
+              <div class="absolute bottom-0 h-1/2 w-full overflow-hidden py-1.5 ps-1 md:py-2 md:ps-2 lg:py-3 lg:ps-5">
+                <i class="fa-solid fa-money-bills text-[25px] text-orange-500 duration-300 ease-in-out group-hover:text-[30px] dark:text-sky-500 md:text-[50px] md:group-hover:text-[60px] lg:text-[80px] lg:group-hover:text-[100px]"></i>
+                <h2 class="px-1 text-[10px] text-black duration-300 ease-in-out dark:text-white md:text-[22px] lg:text-mid">Profit from the sale of your NFT</h2>
+                <p class="px-1 text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[12px] lg:text-low">
+                  The amount of profit you make will depend on the sale price of your NFT and any fees that are charged by the platform.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- introduced -->
+    <section class="h-fit w-full bg-white px-3 py-12 duration-300 ease-in-out dark:bg-black lg:px-0" id="introduced">
+      <div class="started mx-auto h-[350px] w-full md:h-[450px] md:w-[80%] lg:h-[550px]">
+        <p class="text-center text-[10px] duration-300 ease-in-out dark:text-white md:text-[15px] lg:text-[20px]">Resources</p>
+        <h2 class="mx-auto w-1/2 text-center text-[15px] duration-300 ease-in-out dark:text-white md:w-[30%] md:text-xl lg:w-1/3 lg:text-mid">Get Starteds</h2>
+
+        <div class="mt-4 h-[85%] w-full pt-6 md:h-[80%]">
+          <div class="flex w-full justify-between border-b-2 border-black duration-300 ease-in-out dark:border-white">
+            <p class="md:text-7px] text-[8px] text-[#FFAC41] duration-300 ease-in-out dark:text-sky-500 lg:text-base">Article</p>
+            <p class="md:text-7px] text-[8px] text-[#FFAC41] duration-300 ease-in-out dark:text-sky-500 lg:text-base">introduced</p>
+          </div>
+
+          <div class="relative flex h-[20%] w-full justify-between border-b-2 border-black duration-300 ease-in-out dark:border-white md:h-[25%]">
+            <p class="ps-0.5 text-[8px] duration-300 ease-in-out dark:text-white md:ps-1 md:text-[10px] lg:ps-4 lg:text-sm">Wallet</p>
+            <p class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 text-[7px] duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-base">
+              Create a <br />
+              cryptocurrency <br />
+              wallet
+            </p>
+            <p class="absolute left-[70%] top-1/2 w-[35%] -translate-x-1/2 -translate-y-1/2 text-[5px] duration-300 ease-in-out dark:text-white md:text-[7px] lg:text-sm">
+              Before you can buy an NFT on OpenSea, you will need to create a cryptocurrency wallet. OpenSea supports several wallets, including MetaMask.
+            </p>
+            <i
+              class="fa-solid fa-chevron-up fa-rotate-90 my-auto mr-1 cursor-pointer rounded-full bg-[#FFAC41] p-1 text-center text-[10px] text-white duration-300 ease-in-out hover:bg-slate-200 hover:text-[#FFAC41] dark:bg-sky-400 dark:text-white dark:hover:bg-white dark:hover:text-sky-400 md:mr-3 lg:mr-4 lg:px-4 lg:py-3 lg:text-base"
+            ></i>
+          </div>
+
+          <div class="relative flex h-[20%] w-full justify-between border-b-2 border-black duration-300 ease-in-out dark:border-white md:h-[25%]">
+            <p class="ps-0.5 text-[8px] duration-300 ease-in-out dark:text-white md:ps-1 md:text-[10px] lg:ps-4 lg:text-sm">Funding</p>
+            <p class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 text-[7px] duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-base">
+              Fund your <br />
+              wallet with <br />
+              cryptocurrency
+            </p>
+            <p class="absolute left-[70%] top-1/2 w-[35%] -translate-x-1/2 -translate-y-1/2 text-[5px] duration-300 ease-in-out dark:text-white md:text-[7px] lg:text-sm">
+              Make sure to fund your wallet with enough cryptocurrency to cover the cost of the NFT you want to buy, as well as any transaction fees.
+            </p>
+            <i
+              class="fa-solid fa-chevron-up fa-rotate-90 my-auto mr-1 cursor-pointer rounded-full bg-[#FFAC41] p-1 text-center text-[10px] text-white duration-300 ease-in-out hover:bg-slate-200 hover:text-[#FFAC41] dark:bg-sky-400 dark:text-white dark:hover:bg-white dark:hover:text-sky-400 md:mr-3 lg:mr-4 lg:px-4 lg:py-3 lg:text-base"
+            ></i>
+          </div>
+
+          <div class="relative flex h-[20%] w-full justify-between border-b-2 border-black duration-300 ease-in-out dark:border-white md:h-[25%]">
+            <p class="ps-0.5 text-[8px] duration-300 ease-in-out dark:text-white md:ps-1 md:text-[10px] lg:ps-4 lg:text-sm">marketplace</p>
+            <p class="absolute left-[35%] top-1/2 -translate-x-1/2 -translate-y-1/2 text-[7px] duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-base">
+              Find Your Nft <br />
+              in marketplace
+            </p>
+            <p class="absolute left-[70%] top-1/2 w-[35%] -translate-x-1/2 -translate-y-1/2 text-[5px] duration-300 ease-in-out dark:text-white md:text-[7px] lg:text-sm">
+              you can browse the marketplace to find an NFT you want to buy. You can search for NFTs by category, collection, or creator.
+            </p>
+            <i
+              class="fa-solid fa-chevron-up fa-rotate-90 my-auto mr-1 cursor-pointer rounded-full bg-[#FFAC41] p-1 text-center text-[10px] text-white duration-300 ease-in-out hover:bg-slate-200 hover:text-[#FFAC41] dark:bg-sky-400 dark:text-white dark:hover:bg-white dark:hover:text-sky-400 md:mr-3 lg:mr-4 lg:px-4 lg:py-3 lg:text-base"
+            ></i>
+          </div>
+          <div class="w-full pt-5 text-center lg:pt-10">
+            <div
+              class="mx-auto w-[25%] cursor-pointer rounded-full border-2 border-[#FFAC41] py-1 text-[9px] duration-300 ease-in-out hover:border-white hover:bg-[#FFAC41] hover:text-white dark:border-sky-500 dark:text-white dark:hover:border-black dark:hover:bg-sky-500 md:w-[15%] lg:w-[15%] lg:py-2 lg:text-sm"
+            >
+              Read More
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <section class="bg-slate-400 duration-300 ease-in-out dark:bg-slate-700 dark:text-white">
+      <div class="w-full text-center">
+        <h2 class="py-2 text-[10px] md:text-low">Copyright © 2023 The Monitor Mind. All Rights Reserved.</h2>
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector(".bgParallax"), {
+        max: 30,
+        speed: 200,
+      });
+    </script>
+
+    <!-- js -->
+    <script src="./dist/js/app.js"></script>
+    <script src="./dist/js/discover.js" type="module"></script>
+  </body>
+</html>
