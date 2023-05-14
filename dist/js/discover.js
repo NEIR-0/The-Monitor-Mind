@@ -6,22 +6,22 @@ const nft = nfts;
 
 for (let i = 1; i < nft.length; i++) {
   cardCover.innerHTML += `
-  <li data-category="" data-price="" class="m-0.5 h-[110px] w-[23%] rounded-sm bg-orange-500 dark:bg-sky-500 md:m-1 md:h-[180px] md:rounded-md lg:h-[260px] lg:w-[24%]" id="${nft[i].id}">
+  <li data-category="" data-price="" class="m-0.5 h-[100px] w-[23%] rounded-sm bg-orange-500 dark:bg-sky-500 md:m-1 md:h-[180px] md:rounded-md lg:h-[260px] lg:w-[24%]" id="${nft[i].id}">
     <div class="picture mx-auto my-1 h-[65%] w-[95%] rounded-sm md:rounded-md lg:h-[70%]">
       <img src="${nft[i].img}" alt="${nft[i].nama}" class="h-full w-full rounded-sm md:rounded-md" />
     </div>
     <div class="detail mx-auto h-[25%] w-[95%] md:h-[29%] lg:h-[25%]">
-      <div class="relative mx-auto h-[28px] w-full md:h-full">
+      <div class="relative mx-auto h-[25px] w-full md:h-full">
         <!-- name -->
         <div class="absolute left-0">
-        <strong class="block text-[5px] font-normal text-black duration-300 ease-in-out dark:text-white md:text-[8px] lg:text-[10px]">${nft[i].rarity}</strong>
-          <h2 class="text-[6px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-sm">${nft[i].nama}</h2>
+        <strong class="block text-[4px] font-normal text-black duration-300 ease-in-out dark:text-white md:text-[8px] lg:text-[10px]">${nft[i].rarity}</strong>
+          <h2 class="text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-sm">${nft[i].nama}</h2>
         </div>
 
         <!-- price -->
         <div class="absolute right-0">
-          <p class="text-right text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[8px] lg:text-[10px]">Price</p>
-          <h2 class="priceses flex text-[6px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-sm"><span class="hidden">${nft[i].dollar}</span>${nft[i].harga} <img src="img/logo/crypto2.png" alt="" class="my-auto ms-0.5 h-1.5 w-1.5 md:ms-1 md:h-2 lg:h-3 md:w-2 lg:w-3" /></h2>
+          <p class="text-right text-[4px] text-black duration-300 ease-in-out dark:text-white md:text-[8px] lg:text-[10px]">Price</p>
+          <h2 class="priceses flex text-[5px] text-black duration-300 ease-in-out dark:text-white md:text-[10px] lg:text-sm"><span class="hidden">${nft[i].dollar}</span>${nft[i].harga} <img src="img/logo/crypto2.png" alt="" class="my-auto ms-0.5 h-1 w-1 md:ms-1 md:h-2 lg:h-3 md:w-2 lg:w-3" /></h2>
         </div>
 
         <!-- like -->
